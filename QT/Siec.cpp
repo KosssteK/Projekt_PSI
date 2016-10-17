@@ -69,3 +69,47 @@ double Siec::pochodnaFuncE(double suma)
 	
 	return (-alfa*pow(e,alfa*suma)) / (pow(1.0 + pow(e, alfa*suma),2));
 }
+void Siec::zaladuj(std::string i, int ktory, int ileWejsciowych, int ileWarstw, int ostatniNeuron)
+{
+	std::string nazwa;
+	if (ktory == 0)
+	{
+		nazwa = "C:\\Users\\Wojciech\\Documents\\Visual Studio 2013\\Projects\\Przygotowanie danych do psi\\Przygotowanie danych do psi\\dane3\\" + i + ".txt";
+	}
+	else
+	{
+		nazwa = "C:\\Users\\Wojciech\\Documents\\Visual Studio 2013\\Projects\\Przygotowanie danych do psi\\Przygotowanie danych do psi\\dane" + std::to_string(ktory) + "\\" + i + ".txt";
+	}
+
+	std::fstream plik(nazwa);
+	if (plik.is_open())
+	{
+		
+		
+		for (int i = 0; i < ileWejsciowych; i++)
+		{
+			if (i != ileWejsciowych - 1)
+			{
+				plik >> warstwy[0].neurony[i].x;
+				
+			}
+			else
+			{
+				warstwy[0].neurony[i].x = 1;
+				
+			}
+		}
+		plik >> warstwy[ileWarstw - 1].neurony[ostatniNeuron - 1].oczekiwanaWartosc;
+		
+
+		
+	}
+	else
+	{
+		//std::cout << "nie uda³o sie otworzyc"  << std::endl;
+	}
+
+	plik.close();
+
+
+}

@@ -35,6 +35,7 @@ public:
 	double pochodnaFuncE(double suma);
 	void stworzSiec(int ileWarstw, int * ileNeuronow);
 	void dodajWszystkie(int ileWarstw, int * ileNeuronow);
+void zaladuj(std::string i, int ktory, int ileWejsciowych, int ileWarstw, int ostatniNeuron);
 };
 
 
