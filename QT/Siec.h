@@ -35,7 +35,11 @@ public:
 	double pochodnaFuncE(double suma);
 	void stworzSiec(int ileWarstw, int * ileNeuronow);
 	void dodajWszystkie(int ileWarstw, int * ileNeuronow);
-void zaladuj(std::string i, int ktory, int ileWejsciowych, int ileWarstw, int ostatniNeuron);
+	void zaladuj(std::string i, int ktory, int ileWejsciowych, int ileWarstw, int ostatniNeuron);
+	void wstecznaPropagacja(int ileWarstw, int * ileNeuronow);
+	void zapiszWagi(int ileWarstw, int * ileNeuronow);
+	void wczytajWagi(int ileWarstw, int * ileNeuronow);
+	void wypiszDane(int ileWarstw, int * ileNeuronow);
 };
 
 
